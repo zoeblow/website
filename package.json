@@ -1,0 +1,21 @@
+{
+  "name": "chatAi",
+  "version": "1.0.0",
+  "description": "ChatAi Home Page",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zoeblow/0ai.git"
+  },
+  "keywords": [
+    "chatAi",
+    "HomePage"
+  ],
+  "author": "chatAi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zoeblow/0ai/issues"
+  },
+  "homepage": "https://github.com/zoeblow/0ai#readme"
+}
