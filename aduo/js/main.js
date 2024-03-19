@@ -59,16 +59,19 @@ $(window).load(function () {
 });
 /* END ------------------------------------------------------- */
 
-var year = new Date().getFullYear();
-var month = new Date().getMonth() + 1;
-var trueYear = month > 10 ? year - 0 + 1 : year;
-var BabyYearOld = trueYear - 2017;
-// console.log(trueYear, trueYear - 2017, "nian");
+const now = new Date();
+let BabyYearOld = now.getFullYear();
+const targetDate = new Date(BabyYearOld, 10, 6, 11, 0, 0, 0); // 月份从0开始，所以2代表3月
 
-$("#getYear").text(BabyYearOld);
+// 如果今天的日期已经过了3月2日8:00，我们将年份加1
+if (now > targetDate) {
+  BabyYearOld += 1;
+}
+
+$("#getYear").text(BabyYearOld - 2017);
 
 $("#countdown").countdown({
-  date: "November 06, " + trueYear + " 11:00:00",
+  date: "November 06, " + BabyYearOld + " 11:00:00",
   render: function (data) {
     var el = $(this.el);
     el.empty()
