@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh" class="js">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="favicon.ico" rel="shortcut icon" type="image/ico">
+    <title>1KB - 字节计算器</title>
+    <meta name="keywords" content="1KB - 字节计算器">
+    <meta name="description" content="1KB - 字节计算器">
+    <link rel="stylesheet" href="./static/style/dashlite.css">
+    <link rel="stylesheet" href="./static/style/style.css">
+
+</head>
+
+<body class="nk-body npc-invest bg-lighter ">
+    <div class="nk-wrap ">
+        <div class="nk-header nk-header-fluid nk-header-fixed is-light">
+            <div class="container-xl">
+                <div class="nk-header-wrap link-between">
+                    <div class="nk-header-brand">
+                        <a href="/" class="logo-link text-base"><img src="./static/images/logo.png"
+                                class="hide-mb-sm">1KB - 字节计算器</a>
+                    </div>
+                    <div class="no-gutters">
+                        <ul class="nk-quick-nav">
+                            <li class="dropdown">
+                                <a href="javascript:;" class="progress-rating dark-switch ">
+                                    <span class="nk-menu-icon">
+                                        <em class="icon ni ni-moon"></em>
+                                        <em class="icon ni ni-sun d-none"></em>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="nk-content nk-content-lg nk-content-fluid">
+            <div class="container-xl" id="app">
+                <div class="col-sm-12 col-md-10 col-xl-8 center-block">
+                    <div class="card card-preview">
+                        <div class="card-inner mt-3">
+                            <div class="nya-title nk-ibx-action-item progress-rating">
+                                <span class="nk-menu-text font-weight-bold">字节计算器</span>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="set.bit">bit (b)</label>
+                                <div class="form-control-wrap">
+                                    <input v-model="set.bit" id="set.bit" type="number" placeholder="bit (b)"
+                                        class="form-control form-control-lg">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="set.byte">byte (B)</label>
+                                <div class="form-control-wrap">
+                                    <input v-model="set.byte" id="set.byte" type="number" placeholder="byte (B)"
+                                        class="form-control form-control-lg">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="set.kilobyte">kilobyte (KB)</label>
+                                <div class="form-control-wrap">
+                                    <input v-model="set.kilobyte" id="set.kilobyte" type="number"
+                                        placeholder="kilobyte (KB)" class="form-control form-control-lg">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="set.megabyte">megabyte (MB)</label>
+                                <div class="form-control-wrap">
+                                    <input v-model="set.megabyte" id="set.megabyte" type="number"
+                                        placeholder="megabyte (MB)" class="form-control form-control-lg">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="set.gigabyte">gigabyte (GB)</label>
+                                <div class="form-control-wrap">
+                                    <input v-model="set.gigabyte" id="set.gigabyte" type="number"
+                                        placeholder="gigabyte (GB)" class="form-control form-control-lg">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="set.terabyte">terabyte (TB)</label>
+                                <div class="form-control-wrap">
+                                    <input v-model="set.terabyte" id="set.terabyte" type="number"
+                                        placeholder="terabyte (TB)" class="form-control form-control-lg">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="set.petabyte">petabyte (PB)</label>
+                                <div class="form-control-wrap">
+                                    <input v-model="set.petabyte" id="set.petabyte" type="number"
+                                        placeholder="petabyte (PB)" class="form-control form-control-lg">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="mt-5 text-center">
+                <a href="javascript:star_plugin()" class="btn btn-sm btn-outline-danger mr-3">
+                    <em class="icon ni ni-heart"></em>
+                    <span class="nk-menu-text" id="star-btn-text">收藏工具</span>
+                </a>
+            </div> -->
+        </div>
+        <div class="nk-footer nk-footer-fluid bg-lighter">
+            <div class="container-xl">
+                <div class="nk-footer-wrap">
+                    <div class="nk-footer-copyright"> &copy; <span class="year"></span> 1KB - 字节计算器</div>
+                    <div class="toooooji">
+                        <span id="busuanzi_container_site_pv">本站总访问量<span
+                                id="busuanzi_value_site_pv">000001</span>次</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <script src="./static/sctipt/vue.min.js"></script>
+
+    <script>
+        //  设置年
+        document.querySelector('.year').innerHTML = (new Date).getFullYear();
+
+        // 日间模式/夜间模式
+        // 获取dark-switch元素
+        const darkSwitch = document.querySelector('.dark-switch');
+        // 获取body元素
+        const body = document.body;
+        // 切换模式的函数
+        function toggleDarkMode() {
+            // 检查body是否有.dark-mode类
+            if (body.classList.contains('dark-mode')) {
+                // 如果有，移除类
+                body.classList.remove('dark-mode');
+                darkSwitch.classList.remove('active');
+                document.cookie = 'darkmode=0';
+            } else {
+                // 如果没有，添加类
+                body.classList.add('dark-mode');
+                darkSwitch.classList.add('active');
+                document.cookie = 'darkmode=1';
+            }
+        }
+
+        // 给dark-switch绑定点击事件
+        darkSwitch.addEventListener('click', toggleDarkMode);
+
+        function getCookie(cookieName) {
+            const name = cookieName + '=';
+            const decodedCookie = decodeURIComponent(document.cookie);
+            const cookies = decodedCookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                let cookie = cookies[i];
+                while (cookie.charAt(0) === ' ') {
+                    cookie = cookie.substring(1);
+                }
+                if (cookie.indexOf(name) === 0) {
+                    return cookie.substring(name.length, cookie.length);
+                }
+            }
+            return null;
+        }
+
+        const darkmode = getCookie('darkmode');
+        if (darkmode === '1') {
+            body.classList.add('dark-mode');
+            darkSwitch.classList.add('active');
+        }
+
+        new Vue({
+            el: '#app',
+            data: {
+                year: 2024,
+                set: {
+                    bit: '',
+                    byte: '',
+                    kilobyte: '',
+                    megabyte: '',
+                    gigabyte: '',
+                    terabyte: '',
+                    petabyte: '',
+                },
+            },
+            watch: {
+                'set.bit'(newVal) {
+                    this.set.byte = newVal / 8
+                },
+                'set.byte'(newVal) {
+                    this.set.bit = newVal * 8
+                    this.set.kilobyte = newVal / 1024
+                    this.set.megabyte = newVal / 1024 / 1024
+                    this.set.gigabyte = newVal / 1024 / 1024 / 1024
+                    this.set.terabyte = newVal / 1024 / 1024 / 1024 / 1024
+                    this.set.petabyte = newVal / 1024 / 1024 / 1024 / 1024 / 1024
+                },
+                'set.kilobyte'(newVal) {
+                    this.set.byte = newVal * 1024
+                },
+                'set.megabyte'(newVal) {
+                    this.set.byte = newVal * 1024 * 1024
+                },
+                'set.gigabyte'(newVal) {
+                    this.set.byte = newVal * 1024 * 1024 * 1024
+                },
+                'set.terabyte'(newVal) {
+                    this.set.byte = newVal * 1024 * 1024 * 1024 * 1024
+                },
+                'set.petabyte'(newVal) {
+                    this.set.byte = newVal * 1024 * 1024 * 1024 * 1024 * 1024
+                },
+            },
+            methods: {},
+        })
+    </script>
+
+</body>
+
+</html>
