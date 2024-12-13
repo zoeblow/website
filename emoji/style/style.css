@@ -205,30 +205,6 @@ ul.emojis li div > div.tips::before {
   }
 }
 
-@media (max-width: 1024px) {
-  .ecs_hero {
-    padding-top: 64px;
-  }
-
-  .ecs_hero-body {
-    margin: 0 0 48px;
-    max-width: inherit;
-    text-align: center;
-  }
-
-  .ecs_hero-search {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: left;
-  }
-
-  .ecs_hero-tips {
-    max-width: 550px;
-    margin: 0 auto;
-    text-align: center;
-  }
-}
-
 .ecs_hero {
   padding: 96px 0;
   background: url(../graphics/bg-hero.png) no-repeat center 0 #207de9;
@@ -386,6 +362,84 @@ ul.emojis li div > div.tips::before {
   line-height: 28px;
   letter-spacing: -0.0045em;
   color: #00316a;
+}
+
+.ecs_main-wrapp {
+  display: flex;
+}
+
+.ecs_main-side {
+  width: 237px;
+  min-width: 237px;
+  margin-right: 64px;
+}
+.ecs_main-tips {
+  margin: 18px 0;
+}
+.ecs_main-tips ._title {
+  font-family: inherit;
+  margin: 0 0 4px;
+  font-weight: 600;
+  font-size: 21px;
+  line-height: 33px;
+  letter-spacing: -0.0055em;
+  color: #222222;
+}
+.ecs_main-tips ._text {
+  font-family: inherit;
+  margin: 0;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: -0.0045em;
+  color: #222222;
+}
+.ecs_main-filter {
+  padding: 24px;
+  background: #ffffff;
+  box-shadow: 0px 8px 0px #d2dcee;
+  border-radius: 24px;
+  position: fixed;
+  width: 226px;
+}
+
+.ecs_main-filter ul {
+  margin: 0;
+  padding-bottom: 0;
+}
+
+.ecs_main-filter h2 {
+  font-family: inherit;
+  margin: 0 0 8px;
+  font-weight: 600;
+  display: block;
+  font-size: 21px;
+  line-height: 33px;
+  color: #222222;
+}
+
+.ecs_main-filter li:hover {
+  margin-left: 0;
+}
+
+.ecs_main-filter li:hover a {
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.ecs_main-filter li a {
+  display: block;
+  margin: 0 0 4px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  color: #222222;
+  position: relative;
+  text-decoration: none;
+  font-family: inherit;
+}
+.ecs_main-content {
+  flex-grow: 1;
 }
 
 .body-container {
@@ -573,4 +627,44 @@ ul.emojis li div > div.tips::before {
 
 .sounds li {
   list-style: none;
+}
+
+@media (max-width: 1024px) {
+  .ecs_hero {
+    padding-top: 64px;
+  }
+
+  .ecs_hero-body {
+    margin: 0 0 48px;
+    max-width: inherit;
+    text-align: center;
+  }
+
+  .ecs_hero-search {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+  }
+
+  .ecs_hero-tips {
+    max-width: 550px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .ecs_main-wrapp {
+    display: block;
+  }
+
+  .ecs_main-filter {
+    position: static;
+    width: auto;
+  }
+
+  .ecs_main-side {
+    width: auto;
+    min-width: inherit;
+    margin-right: 0;
+    margin-bottom: 56px;
+  }
 }

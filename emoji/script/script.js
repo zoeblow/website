@@ -8,6 +8,7 @@ FX.BackToTop = {
 
   init() {
     this.$btn = $(".back-to-top");
+    this.$category = $("#category");
 
     if (this.$btn.length) {
       this.bind();
@@ -22,13 +23,20 @@ FX.BackToTop = {
   maybeShowButton() {
     if ($(window).scrollTop() > 500) {
       this.$btn.fadeIn();
+      this.$category.css({ position: "fixed", top: "20px" });
     } else {
       this.$btn.fadeOut();
+      this.$category.css({ position: "static" });
     }
   },
 
   scrollToTop() {
-    $(window).scrollTop(0);
+    $("html, body").animate(
+      {
+        scrollTop: 0,
+      },
+      "300"
+    );
   },
 };
 
