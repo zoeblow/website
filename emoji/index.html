@@ -46,8 +46,6 @@
         </div>
     </section>
 
-
-
     <section class="body-container container">
         <div class="ecs_main-wrapp">
             <div class="ecs_main-side">
@@ -59,7 +57,7 @@
                 <section class="ecs_main-filter" id="category">
                     <h2>目录</h2>
                     <ul>
-                        <li><a href="#emoji-people">人物表情相关</a></li>
+                        <li class="active"><a href="#emoji-people">人物表情相关</a></li>
                         <li><a href="#emoji-nature">自然相关</a></li>
                         <li><a href="#emoji-objects">物体相关</a></li>
                         <li><a href="#emoji-places">地点相关</a></li>
@@ -5690,7 +5688,6 @@
                     </ul>
                 </div>
 
-
                 <div id="emoji-foods">
                     <h2>食物饮料</h2>
                     <ul class="foods emojis">
@@ -6229,22 +6226,42 @@
         </div>
     </div>
     <div id="footer">
-        <p>
-            This page was created by
-            <a href="http://ifuyuan.wang">Fuyuan Wong</a> /
-            <a href="http://github.com/zoeblow">zoeblow</a> Source code is available on
-            <a href="https://github.com/zoeblow/emoji-cheat-sheet">GitHub</a>.
-        </p>
-        <p>
-            &#x2764; 根据 <a href="https: //github.com/WebpageFX/emoji-cheat-sheet.com">emoji-cheat-sheet</a>代码修改而来
-            如果有侵权请联系我删除，谢谢！<br> &#x267A; Built using bits from
-            <a href="https://github.com/zeroclipboard/zeroclipboard">ZeroClipboard</a>.
-        </p>
+        <div class="container footer-container">
+            <div class="copyright">
+                <p>
+                    🕸 This page was created by
+                    <a href="http://ifuyuan.wang" target="_blank">Fuyuan Wong</a> /
+                    <a href="http://github.com/zoeblow" target="_blank">zoeblow</a> Source code is available on
+                    <a href="https://github.com/zoeblow/emoji-cheat-sheet" target="_blank">GitHub</a>.
+                </p>
+                <p>
+                    💌 根据 <a href="https: //github.com/WebpageFX/emoji-cheat-sheet.com"
+                        target="_blank">emoji-cheat-sheet</a>代码修改而来
+                    如果有侵权请联系我删除，谢谢！<br> 🌳 Built using bits from
+                    <a href="https://github.com/zeroclipboard/zeroclipboard" target="_blank">ZeroClipboard</a>.
+                </p>
+                <p>
+                    🐼 <span id="busuanzi_container_site_pv">本站总访问量<span
+                            id="busuanzi_value_site_pv">00001</span>次</span>
+                </p>
+            </div>
+        </div>
+    </div>
     </div>
     <script src="./script/jquery.min.js"></script>
     <script src="./script/jquery.lazyload.js"></script>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <script src="./script/zero-clipboard.min.js"></script>
     <script src="./script/script.js?10"></script>
+
+    <script>
+        console.log(
+            "%c Wang %c Copyright \xa9 2010-%s\n ",
+            'font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;font-size:64px;color:#FD6E0E;-webkit-text-fill-color:#FD6E0E;-webkit-text-stroke: 1px #FD6E0E;',
+            "font-size:12px;color:#999999;",
+            new Date().getFullYear()
+        );
+    </script>
 </body>
 
 </html>

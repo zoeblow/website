@@ -167,4 +167,35 @@ $(document).ready(function () {
 
   console.log($("img.lazy").length, "images");
   $("img.lazy").lazyload();
+
+  const $dLis = $(".ecs_main-filter > ul > li");
+
+  $dLis.click(function () {
+    //更改选中项和其他兄弟节点的样式
+    $(this).addClass("active").siblings().removeClass("active");
+    var index = $dLis.index(this);
+  });
+
+  //浏览器滚动条滚动触发的事件
+  $(window).scroll(funScroll);
+
+  const $divs = $(".ecs_main-content > div");
+  //条滚动事件方法
+  function funScroll() {
+    //获取当前滚动条的高度
+    var top = $(document).scrollTop();
+
+    //遍历所有的div
+    $divs.each(function (index) {
+      var $divObj = $(this);
+      var thisTop = $divObj.offset().top - 30;
+      if (top >= thisTop) {
+        //获取当前高亮的选项
+        var $activeObj = $dLis.find(".active");
+        if ($dLis[index] && $($dLis[index]) != $activeObj) {
+          $($dLis[index]).addClass("active").siblings().removeClass("active");
+        }
+      }
+    });
+  }
 });

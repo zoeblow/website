@@ -422,11 +422,6 @@ ul.emojis li div > div.tips::before {
   margin-left: 0;
 }
 
-.ecs_main-filter li:hover a {
-  text-decoration: underline;
-  font-weight: 600;
-}
-
 .ecs_main-filter li a {
   display: block;
   margin: 0 0 4px;
@@ -438,6 +433,17 @@ ul.emojis li div > div.tips::before {
   text-decoration: none;
   font-family: inherit;
 }
+
+.ecs_main-filter li:hover a {
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.ecs_main-filter .active a {
+  font-weight: 600;
+  color: #207de9;
+}
+
 .ecs_main-content {
   flex-grow: 1;
 }
@@ -667,4 +673,10 @@ ul.emojis li div > div.tips::before {
     margin-right: 0;
     margin-bottom: 56px;
   }
+}
+
+.footer-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
