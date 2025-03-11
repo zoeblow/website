@@ -399,8 +399,12 @@ ul.emojis li div > div.tips::before {
   background: #ffffff;
   box-shadow: 0px 8px 0px #d2dcee;
   border-radius: 24px;
-  position: fixed;
   width: 226px;
+}
+
+.ecs_main-filter.fixed {
+  position: fixed;
+  top: 20px;
 }
 
 .ecs_main-filter ul {
@@ -667,11 +671,42 @@ ul.emojis li div > div.tips::before {
     width: auto;
   }
 
+  .body-container {
+    padding: 0 20px 0 50px;
+  }
+
+  .ecs_main-filter.fixed {
+    overflow: hidden;
+    left: 2px;
+    width: 20px;
+    padding: 12px;
+  }
+
+  .ecs_main-filter.fixed ul li {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 18px;
+  }
+
+  .ecs_main-content h2 {
+    text-align: center;
+  }
+
+  .ecs_main-content .emojis li {
+    margin: 0 8px 12px 0;
+  }
+
   .ecs_main-side {
     width: auto;
     min-width: inherit;
     margin-right: 0;
     margin-bottom: 56px;
+  }
+
+  .action-container .back-to-top {
+    padding: 2px 4px;
+    margin: 2px;
+    height: 30px;
   }
 }
 

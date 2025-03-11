@@ -1,9 +1,9 @@
 /*
  * Emoji cheat sheet
  */
-const FX = {};
-FX.version = "0.1.0";
-FX.BackToTop = {
+const Fy = {};
+Fy.version = "0.1.0";
+Fy.BackToTop = {
   $btn: null,
 
   init() {
@@ -23,10 +23,10 @@ FX.BackToTop = {
   maybeShowButton() {
     if ($(window).scrollTop() > 500) {
       this.$btn.fadeIn();
-      this.$category.css({ position: "fixed", top: "20px" });
+      this.$category.addClass("fixed");
     } else {
       this.$btn.fadeOut();
-      this.$category.css({ position: "static" });
+      this.$category.removeClass("fixed");
     }
   },
 
@@ -162,10 +162,7 @@ $(document).ready(function () {
   });
   $("#header .search").focus();
 
-  FX.BackToTop.init();
-  console.log(FX, "FX");
-
-  console.log($("img.lazy").length, "images");
+  Fy.BackToTop.init();
   $("img.lazy").lazyload();
 
   const $dLis = $(".ecs_main-filter > ul > li");
