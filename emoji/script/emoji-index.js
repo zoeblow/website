@@ -42,14 +42,15 @@ window.jQuery(function ($) {
 
   $(window).scroll(() => {
     //获取当前滚动条的高度
-    if ($(window).scrollTop() > 400) {
+    const width = $(document).width();
+    if (width > 1024 && $(window).scrollTop() > 400) {
       $(".ecs_main-filter").css({
         position: "fixed",
         top: "20px",
         width: "237px",
       });
     } else {
-      $(".ecs_main-filter").css({ position: "static" });
+      $(".ecs_main-filter").css({ position: "static", width: "auto" });
     }
   });
 
